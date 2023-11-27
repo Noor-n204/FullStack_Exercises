@@ -1,0 +1,48 @@
+body{
+    background-color: #ddd;
+}
+
+nav{
+    background-color:rgb(51, 51, 51);
+}
+
+.hero-image{
+    width: 100%;
+}
+
+li:first-child{
+    background-color:green;
+}
+
+
+#container{
+    height: 120px;
+    width: 215px;
+    background-color: rgb(152, 148, 148);
+    box-shadow:8px 8px 5px rgb(55, 53, 53);
+
+
+}
+
+.button{
+    background-color: green;
+}
+
+
+#first {
+    height: 40px;
+    width: 40px;
+    background-color:green;
+    display: inline-block;
+  }
+
+  #second {
+    height: 40px;
+    width: 40px;
+    background-color:orange;
+    display: inline-block;
+  }
+
+    #container:hover{
+    background-color: red;
+  }

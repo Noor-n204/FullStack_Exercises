@@ -1,0 +1,104 @@
+/* Here we've use the grid-template-areas, because the overall layout is static! Everything inside though, that's a different story
+ */
+ #chat{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 15fr 1fr;
+    grid-template-areas: 
+    "f c"
+    "f i";
+}
+
+
+.text-container{
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+    height: 5vh;
+    align-content: center;
+    align-items: end;
+    border-radius: 5px;
+    grid-template-columns   : 3fr 1fr;
+    grid-template-areas: 
+    "m . t";
+
+}
+
+
+.right {
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+
+    justify-self: end;
+    margin-right: 10px;
+    background-color:rgb(44, 140, 44) ;
+}
+
+
+
+.left {
+    height: fit-content;
+    width: fit-content;
+    display: grid;
+
+    justify-self: start;
+    margin-left: 10px;
+    background-color:gray ;
+}
+
+
+.time {
+    height: fit-content;
+    width: fit-content;
+    grid-area: t;
+    font-size: small;
+    block-size: 20%;
+}
+
+.text {
+    height: fit-content;
+    width: fit-content;
+    grid-area: m;
+}
+
+
+.friend {
+    margin-left: 10px;
+    height: 26px;
+    width: 270px;
+    display: grid;
+    align-content: center;
+    background-color: rgb(245, 111, 245);
+}
+
+
+
+
+.sendButton {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: purple;
+    color: white;
+}
+
+#friends{
+    grid-area: f;
+    display: grid;
+    background-color: purple;
+}
+
+#chatbox{
+    grid-area: c;
+    display: grid;
+    background-color: lightgrey;
+    grid-gap: 10px
+}
+
+#input{
+    grid-area: i;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
