@@ -11,7 +11,9 @@ $('.generator').on('click', function() {
   $(".validator").on("click", function(){
     console.log($(this).closest(".computer").find(".generator").text())
     console.log($(this).closest(".computer").find(".MB").text())
-    console.log($(this).closest(".computer").find(".QR").text())
+    $(this).closest(".computer").find(".QR").each(function( index ) {
+      console.log($( this ).text() );
+    });
   })
 
 
@@ -21,11 +23,3 @@ $('.generator').on('click', function() {
 
 
 
-// $('button').on('click', function() {
-//     let relevantInputValue = $(this).closest("div").find("input").val()
-//     alert(relevantInputValue)
-//   })
-
-// $('button').on('click', function(){
-//     console.log($(".container").find("p").text())
-// })
