@@ -1,0 +1,14 @@
+{
+  "name": "solar_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "solarSystem.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.0.3"
+  }
+}

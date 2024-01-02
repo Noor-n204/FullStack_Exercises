@@ -59,7 +59,7 @@ function loadFromAPI(apiURL) {
       //Only save if the book doesn't exist yet
       Book.findOne({ title: book.title }).then( function(err, foundBook) {
         if (!foundBook) {
-          book.save()
+          //book.save()
         }
       })
     }
@@ -113,7 +113,7 @@ adds new people and their kids until you do have 100
 try to understand how this code works
 could you write it differently?
 =======================================================*/
-Person.find({}).count().then(function(err, count) {
+Person.find({}).count().then(function(count) {
   // the below two loops could be changed to a simple:
   // for (var i = count; i < 100; i++) {}
   if (count < 100) {
@@ -128,7 +128,7 @@ Person.find({}).count().then(function(err, count) {
         numKids: numKids,
         kids: getKids(numKids)
       });
-      p.save();
+      //p.save();
     }
   }
 })
@@ -155,31 +155,31 @@ and your server is running do the following:
 /*Books
 ----------------------*/
 //1. Find books with fewer than 500 but more than 200 pages
-Book.find({}).then(function(err,books){
+Book.find({}).then(function(books){
   console.log(books)
 })
-Book.find({pages:{"$lt":500, "$gt":200}}).then(function(err, books){
+Book.find({pages:{"$lt":500, "$gt":200}}).then(function(books){
     console.log(books)
 })
 //2. Find books whose rating is less than 5, and sort by the author's name
-Book.find({rating:{"$lt":5}}).sort({author:-1}).exec().then(function(err, books) {
+Book.find({rating:{"$lt":5}}).sort({author:-1}).exec().then(function(books) {
   console.log(books)
 });
 
 //3. Find all the Fiction books, skip the first 2, and display only 3 of them
 
-Book.find({genres:"Fiction"}).skip(2).limit(3).exec().then(function(err, books){
+Book.find({genres:"Fiction"}).skip(2).limit(3).exec().then(function(books){
 
 });
 /*People
 ----------------------*/
 //1. Find all the people who are tall (>180) AND rich (>30000)
-Person.find((	{ height:{"$gt":180}, salary:{"$gt":30000}	})).then( function(err, people){
+Person.find((	{ height:{"$gt":180}, salary:{"$gt":30000}	})).then( function(people){
 	
 })
 
 //2. Find all the people who are tall (>180) OR rich (>30000)
-Person.find( { $or:[ {height:{"$gt":180}}, {salary:{"$gt":30000}}]}).then( function(err,people){
+Person.find( { $or:[ {height:{"$gt":180}}, {salary:{"$gt":30000}}]}).then( function(people){
 
 });
 
@@ -193,7 +193,7 @@ Person.find().and([
 
 
 //4. Find people who have at least 1 kid with grey hair
-Person.find({kids:{$elemMatch:{hair:"grey"}}}).exec().then(function(err,people){
+Person.find({kids:{$elemMatch:{hair:"grey"}}}).exec().then(function(people){
 
 })
 
@@ -201,6 +201,6 @@ Person.find({kids:{$elemMatch:{hair:"grey"}}}).exec().then(function(err,people){
 Person.find().and([
   {weight: {"$gt":100}},
   {kids:{$elemMatch:{weight: {"$gt":100}}}}
-]).exec().then(function(err, people){
+]).exec().then(function(people){
 
 })
